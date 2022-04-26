@@ -3,6 +3,7 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
 
+
 class Login(AbstractUser):
     is_worker = models.BooleanField(default=False)
     is_customer = models.BooleanField(default=False)

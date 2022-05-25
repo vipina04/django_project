@@ -131,7 +131,7 @@ def customer_view(request):
     context = {
         'data':data
     }
-    return render(request,'customer_reg_view.html',context)
+    return render(request,'customer_view.html',context)
 
 def update_view(request,id):
     obj = Worker.objects.get(id=id)
@@ -140,12 +140,38 @@ def update_view(request,id):
         form.save()
         return redirect('worker_view')
     return render (request,'update.html',{'form':form})
-def delete_view(request,id):
+def delete_worker(request,id):
     obj = Worker.objects.get(id=id)
     if request.method=='POST':
         obj.delete()
         return redirect('worker_view')
-    return render(request,'delete.html')
+    return render(request,'delete_worker.html')
+
+
+def delete_customer(request,id):
+    obj = Customer.objects.get(id=id)
+    if request.method=='POST':
+        obj.delete()
+        return redirect('customer_view')
+    return render(request,'delete_customer.html')
+
+
+def update_worker(request,id):
+    obj = Worker.objects.get(id=id)
+    form =WorkerRegister(request.POST or None,instance= obj)
+    if form.is_valid():
+        form.save()
+        return redirect('worker_view')
+    return render (request,'update_worker.html',{'form':form})
+
+def update_customer(request,id):
+    obj = Customer.objects.get(id=id)
+    form =CustomerRegister(request.POST or None,instance= obj)
+    if form.is_valid():
+        form.save()
+        return redirect('worker_view')
+    return render (request,'update_customer.html',{'form':form})
+
 
 
 

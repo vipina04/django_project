@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
   <!-- Required meta tags -->
@@ -33,7 +33,7 @@
 <!--              <div class="brand-logo">-->
 <!--                <img src=" {% static 'panel/images/logo-dark.svg' %} " alt="logo">-->
 <!--              </div>-->
-              <h4>Hello! let's get started</h4>
+<!--              <h4>Hello! let's get started</h4>-->
               <h6 class="font-weight-light">Sign in to continue.</h6>
               <form method="post" class="pt-3">
                   {% csrf_token %}
@@ -53,17 +53,17 @@
 <!--                      <input type="checkbox" class="form-check-input">-->
 <!--                    </label>-->
 <!--                  </div>-->
-                  <a href="{% url 'worker_register' %}" class="auth-link text-black">Worker Registration</a>
-                  <a href="{% url 'customer_register' %}" class="auth-link text-black">Customer Registration</a>
+                  <a href="{% url 'worker_register' %}" class="auth-link text-black">Register Worker</a>
+                 <a href="{% url 'customer_register' %}" class="auth-link text-black">Register Customer</a>
                 </div>
 <!--                <div class="mb-2">-->
 <!--                  <button type="button" class="btn btn-block btn-facebook auth-form-btn">-->
 <!--                    <i class="typcn typcn-social-facebook mr-2"></i>Connect using facebook-->
 <!--                  </button>-->
 <!--                </div>-->
-                <div class="text-center mt-4 font-weight-light">
-                  Don't have an account? <a href=" {% static 'register.html' %} " class="text-primary">Create</a>
-                </div>
+<!--                <div class="text-center mt-4 font-weight-light">-->
+<!--                  Don't have an account? <a href=" {% static 'register.html' %} " class="text-primary">Create</a>-->
+<!--                </div>-->
               </form>
             </div>
           </div>

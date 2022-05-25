@@ -1,4 +1,3 @@
-
 {% extends 'admin_home.html' %}
 {% block content %}
 <table class="table">
@@ -7,7 +6,7 @@
       <th scope="col">S.No</th>
       <th scope="col">Name</th>
       <th scope="col">Email</th>
-      <th scope="col">Work_type</th>
+      <th scope="col">Address</th>
       <th scope="col">Phone_No</th>
       <th scope="col">Update</th>
       <th scope="col">Delete</th>
@@ -20,10 +19,10 @@
 <!--      <td>{{n.roll_no}}</td>-->
       <td>{{n.name}}</td>
       <td>{{n.email}}</td>
-      <td>{{n.work_type}}</td>
+      <td>{{n.address}}</td>
       <td>{{n.phone_number}}</td>
-      <td> <a href=" {% url 'update_view' n.id %}"> update</a></td>
-      <td> <a href=" {% url 'delete_worker' n.id %}"> delete</a></td>
+      <td> <a href=" {% url 'update_customer' n.id %}"> update</a></td>
+      <td> <a href=" {% url 'delete_customer' n.id %}"> delete</a></td>
 
 
     </tr>
